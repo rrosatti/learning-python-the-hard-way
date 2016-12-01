@@ -18,7 +18,11 @@ def print_lines(num_of_lines, f):
     for i in range(1, num_of_lines + 1):
         print_a_line(i, f)
 
-current_file = open(input_file)
+def write_in_file(content, f):
+    f.seek(0, 2)
+    f.write(content)
+
+current_file = open(input_file, "r+")
 
 print "First let's print the whole file:\n"
 print_all(current_file)
@@ -37,3 +41,8 @@ rewind(current_file)
 print "Now it will get more interesting:"
 num_of_lines = int(raw_input("Number of lines: "))
 print_lines(num_of_lines, current_file)
+
+rewind(current_file)
+print "Now, write something to be add to this file."
+content = raw_input("Type anything you want: ")
+write_in_file(content, current_file)

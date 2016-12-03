@@ -1,3 +1,6 @@
+import sys
+sys.path.append("..")
+from ex48 import parser
 # here there are the allowed words
 directions = {'north': 'direction', 'south': 'direction', 'east': 'direction', 'west': 'direction', 'down': 'direction', 'up': 'direction', 'left': 'direction', 'right': 'direction', 'back': 'direction'}
 verbs = {'go': 'verb', 'stop': 'verb', 'kill': 'verb', 'eat': 'verb'}
@@ -38,3 +41,7 @@ def convert_number(word):
 def get_tuple(word):
     value = allowed_words.get(word, None)
     return value
+
+sentence = raw_input("> ")
+words = scan(sentence)
+parser.parse_sentence(words)

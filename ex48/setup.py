@@ -5,7 +5,7 @@ except ImportError:
 
 config = {
     'description': 'Advanced User Input',
-    'author': 'Rodrigo R. Galvão',
+    'author': 'Rodrigo R. Galvao',
     'author_email': 'rodrigo_rosatti@hotmail.com',
     'version': '0.1',
     'install_requires': ['nose'],
